@@ -4,8 +4,10 @@
 //header component
 header {
     display: flex;
+    position: relative;
     padding: 1.5rem 4rem;
     box-shadow: $box-shadow;
+    z-index: 5;
     .header-h3 {
         margin-right: auto;
         font-size: 1.3rem;
@@ -19,6 +21,46 @@ header {
         cursor: pointer;
         span {
             margin-left: 0.7rem;
+        }
+    }
+}
+
+//countries component
+.countries {
+    padding: 3.5rem 4rem;
+    background-color: $light-mode-background;
+    z-index: 1;
+    .nav-and-search {
+        position: relative;
+        display: flex;
+        .nav-and-search-input-container {
+            margin-right: auto;
+            .search-outlined-icon-container {
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                left: 20px;
+                transform: translateY(-50%);
+            }
+            #search {
+                width: 600px;
+                text-indent: 40px;
+                padding: 1rem;
+                border: none;
+                background-color: $light_mode_elements;
+                box-shadow: $box-shadow;
+                border-radius: 10px;
+            }
+        }
+        .nav-and-search-select-container {
+            #filter-by-region {
+                font-weight: 600;
+                padding: 1rem;
+                border: none;
+                background-color: $light_mode_elements;
+                box-shadow: $box-shadow;
+                border-radius: 10px;
+            }
         }
     }
 }

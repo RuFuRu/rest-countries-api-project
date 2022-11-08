@@ -1,7 +1,9 @@
+import NavAndSearch from "./NavAndSearch";
+
 function Countries() {
     return (
-        <div className="Countries">
-            
+        <div className="countries">
+            <NavAndSearch/>
         </div>
     )
 }
