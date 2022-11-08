@@ -15,7 +15,8 @@ async function fetchAPI(region?: string): Promise<fetchAPIInterface> {
     capital: response.capital,
     topLevelDomain: response.tld,
     currencies: response.currencies,
-    languages: response.languages
+    languages: response.languages,
+    borders: response.borders
    }
 }
 

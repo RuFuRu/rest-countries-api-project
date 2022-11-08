@@ -12,5 +12,6 @@ export interface fetchAPIInterface {
     capital: string[],
     topLevelDomain: string[],
     currencies: {},
-    languages: {}
+    languages: {},
+    borders: string[]
 }
