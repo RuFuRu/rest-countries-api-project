@@ -1,0 +1,24 @@
+@use 'default' as *;
+@use 'vars' as *;
+
+//header component
+header {
+    display: flex;
+    padding: 1.5rem 4rem;
+    box-shadow: $box-shadow;
+    .header-h3 {
+        margin-right: auto;
+        font-size: 1.3rem;
+    }
+    .header-btn {
+        display: flex;
+        align-items: center;
+        border: none;
+        background-color: inherit;
+        font-weight: 600;
+        cursor: pointer;
+        img {
+            margin-right: 1rem;
+        }
+    }
+}
