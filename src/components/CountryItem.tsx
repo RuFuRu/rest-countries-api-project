@@ -1,3 +1,4 @@
+import numberFormatter from "../otherFunctions/numberFormatter";
 import { countryListReturnType } from "../types/types";
 
 interface CountryItemProps {
@@ -10,7 +11,7 @@ function CountryItem({countryData}: CountryItemProps) {
             <div><img src={countryData.flags.svg} alt={`${countryData.cca2} flag`}/></div>
             <div className="country-item-description">
                 <h3>{countryData.name.common}</h3>
-                <p><span className="country-item-span">Population:</span>{countryData.population}</p>
+                <p><span className="country-item-span">Population:</span>{numberFormatter(countryData.population)}</p>
                 <p><span className="country-item-span">Region:</span>{countryData.region}</p>
                 <p><span className="country-item-span">Capital:</span>{countryData.capital.join(" ")}</p>
             </div>
