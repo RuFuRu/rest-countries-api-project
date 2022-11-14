@@ -15,3 +15,16 @@ export interface fetchAPIInterface {
     languages: {},
     borders: string[]
 }
+
+export interface countryListReturnType {
+    flags: {
+        svg: string
+    }
+    name: {
+        common: string
+    },
+    population: number,
+    region: string,
+    capital: string[],
+    cca2: string
+}
