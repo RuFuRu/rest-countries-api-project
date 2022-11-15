@@ -8,6 +8,7 @@ function NavAndSearch() {
     function handleChange(e: FormEvent) {
         const target = e.target as HTMLOptionElement;
         context.setFilter!(target.value);
+        context.setUnFilter!(false);
     }
 
     return (
