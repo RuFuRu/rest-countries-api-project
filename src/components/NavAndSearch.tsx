@@ -1,9 +1,14 @@
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import { useContext } from 'react';
+import { FormEvent, useContext } from 'react';
 import CountriesContext from '../context/CountriesContext';
 
 function NavAndSearch() {
     const context = useContext(CountriesContext);
+
+    function handleChange(e: FormEvent) {
+        const target = e.target as HTMLOptionElement;
+        context.setFilter!(target.value);
+    }
 
     return (
         <div className="nav-and-search">
@@ -14,7 +19,7 @@ function NavAndSearch() {
                 <input type="search" id="search" placeholder="Search for a country"/>
             </div>
             <div className="nav-and-search-select-container">
-                <select name="filter-by-region" id="filter-by-region">
+                <select name="filter-by-region" id="filter-by-region" onChange={(e) => handleChange(e)}>
                     <option value="" disabled selected hidden>Please Choose...</option>
                     <option value="Africa">Africa</option>
                     <option value="America">America</option>

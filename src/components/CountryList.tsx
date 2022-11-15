@@ -1,9 +1,10 @@
+import { memo } from "react";
 import {useQuery } from "react-query";
 import fetchAPI from "../otherFunctions/fetchAPI";
 import { countryListReturnType } from "../types/reusableTypes";
 import CountryItem from "./CountryItem";
 
-function CountryList() {
+const CountryList = memo(() => {
     const { isLoading, isError, data, error,} = useQuery("countryData", fetchAPI);
 
     if(isLoading) {
@@ -22,6 +23,6 @@ function CountryList() {
             ))}
         </div>
     )
-}
+})
 
 export default CountryList;
