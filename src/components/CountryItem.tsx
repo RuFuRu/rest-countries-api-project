@@ -1,5 +1,5 @@
 import numberFormatter from "../otherFunctions/numberFormatter";
-import { countryListReturnType } from "../types/types";
+import { countryListReturnType } from "../types/reusableTypes";
 
 interface CountryItemProps {
     countryData: countryListReturnType

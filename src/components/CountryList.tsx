@@ -1,6 +1,6 @@
 import {useQuery } from "react-query";
 import fetchAPI from "../otherFunctions/fetchAPI";
-import { countryListReturnType } from "../types/types";
+import { countryListReturnType } from "../types/reusableTypes";
 import CountryItem from "./CountryItem";
 
 function CountryList() {

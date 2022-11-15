@@ -1,6 +1,10 @@
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import { useContext } from 'react';
+import CountriesContext from '../context/CountriesContext';
 
 function NavAndSearch() {
+    const context = useContext(CountriesContext);
+
     return (
         <div className="nav-and-search">
             <div className="nav-and-search-input-container">
