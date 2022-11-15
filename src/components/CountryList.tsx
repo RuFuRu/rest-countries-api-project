@@ -1,11 +1,11 @@
-import { useContext } from "react";
-import { useQuery } from "react-query";
+import { memo, useContext } from "react";
+import {useQuery } from "react-query";
 import CountriesContext from "../context/CountriesContext";
 import fetchAPI from "../otherFunctions/fetchAPI";
 import { countryListReturnType } from "../types/reusableTypes";
 import CountryItem from "./CountryItem";
 
-const CountryList = () => {
+const CountryList = memo(() => {
     const context = useContext(CountriesContext);
     const { isLoading, isError, data, error,} = useQuery("countryData", fetchAPI);
 
@@ -25,6 +25,6 @@ const CountryList = () => {
             ))}
         </div>
     )
-}
+})
 
 export default CountryList;
