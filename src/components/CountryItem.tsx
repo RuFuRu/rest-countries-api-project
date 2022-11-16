@@ -1,8 +1,8 @@
 import numberFormatter from "../otherFunctions/numberFormatter";
-import { countryListReturnType } from "../types/reusableTypes";
+import { countryListAPIType } from "../types/reusableTypes";
 
 interface CountryItemProps {
-    countryData: countryListReturnType
+    countryData: countryListAPIType
 }
 
 function CountryItem({countryData}: CountryItemProps) {
