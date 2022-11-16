@@ -17,10 +17,11 @@ const CountryList = memo(() => {
         return <div>Error</div>
     }
 
-    console.log(data);
+    //console.log(data);
     return (
         <div className="country-list">
-            {data.flat().filter((countryData: countryListReturnType) => countryData.region === context.filter || context.unFilter).map((countryData: countryListReturnType) => (
+            {console.log(context.unFilter)}
+            {data.filter((countryData: countryListReturnType) => countryData.region === context.filter || context.unFilter).map((countryData: countryListReturnType) => (
                 <CountryItem countryData={countryData} key={countryData.cca2}/>
             ))}
         </div>

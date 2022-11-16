@@ -13,7 +13,7 @@ function CountryItem({countryData}: CountryItemProps) {
                 <h3>{countryData.name.common}</h3>
                 <p><span className="country-item-span">Population:</span>{numberFormatter(countryData.population)}</p>
                 <p><span className="country-item-span">Region:</span>{countryData.region}</p>
-                <p><span className="country-item-span">Capital:</span>{countryData.capital.join(" ")}</p>
+                <p><span className="country-item-span">Capital:</span>{countryData.capital}</p>
             </div>
         </div>
     )

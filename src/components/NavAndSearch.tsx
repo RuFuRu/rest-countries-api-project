@@ -7,8 +7,13 @@ function NavAndSearch() {
 
     function handleChange(e: FormEvent) {
         const target = e.target as HTMLOptionElement;
-        context.setFilter!(target.value);
-        context.setUnFilter!(false);
+        if(target.value === "all") {
+            context.setFilter!('');
+            context.setUnFilter!(true);
+        } else {
+            context.setFilter!(target.value);
+            context.setUnFilter!(false);
+        }
     }
 
     return (
@@ -21,9 +26,9 @@ function NavAndSearch() {
             </div>
             <div className="nav-and-search-select-container">
                 <select name="filter-by-region" id="filter-by-region" onChange={(e) => handleChange(e)}>
-                    <option value="" disabled selected hidden>Please Choose...</option>
+                    <option value="all">All</option>
                     <option value="Africa">Africa</option>
-                    <option value="America">America</option>
+                    <option value="Americas">America</option>
                     <option value="Asia">Asia</option>
                     <option value="Europe">Europe</option>
                     <option value="Oceania">Oceania</option>
