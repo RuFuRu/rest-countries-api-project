@@ -3,7 +3,11 @@ import NavAndSearch from "./NavAndSearch";
 import CountriesContext from "../context/CountriesContext";
 import { useState } from "react";
 
-function Countries() {
+interface CountriesProps {
+    receivedData: unknown
+}
+
+function Countries({receivedData}: CountriesProps) {
     const [filter, setFilter] = useState<string>('');
     const [unFilter, setUnFilter] = useState<boolean>(true);
 
@@ -11,7 +15,7 @@ function Countries() {
         <CountriesContext.Provider value={{filter, setFilter, unFilter, setUnFilter}}>
             <div className="countries">
                 <NavAndSearch/>
-                <CountryList/>
+                <CountryList receivedData={receivedData}/>
             </div>
         </CountriesContext.Provider>
     )

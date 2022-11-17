@@ -1,4 +1,8 @@
-function CountryItemPage() {
+interface CountryItemProps {
+    receivedData: unknown
+}
+
+function CountryItemPage({receivedData}: CountryItemProps) {
     return (
         <div></div>
     )
