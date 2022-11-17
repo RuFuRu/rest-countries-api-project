@@ -1,6 +1,5 @@
 import { memo, useContext } from "react";
 import CountriesContext from "../context/CountriesContext";
-import fetchAPI from "../otherFunctions/fetchAPI";
 import { countryListAPIType } from "../types/reusableTypes";
 import CountryItem from "./CountryItem";
 

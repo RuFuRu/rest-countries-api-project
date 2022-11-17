@@ -1,6 +1,6 @@
 import Countries from "./pages/Countries"
 import Header from "./components/Header"
-import fetchAPI from "./otherFunctions/fetchAPI"
+import fetchData from "./otherFunctions/fetchData"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useState, useEffect } from "react"
 import CountryItemPage from "./pages/CountryItemPage"
@@ -9,7 +9,7 @@ function App() {
   const [receivedData, setReceivedData] = useState<unknown>();
 
   useEffect(() => {
-    fetchAPI().then((data) => setReceivedData(data));
+    fetchData().then((data) => setReceivedData(data));
   },[])
 
   return (
