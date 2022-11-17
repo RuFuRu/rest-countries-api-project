@@ -1,5 +1,5 @@
-import CountryList from "./CountryList";
-import NavAndSearch from "./NavAndSearch";
+import CountryList from "../components/CountryList";
+import NavAndSearch from "../components/NavAndSearch";
 import CountriesContext from "../context/CountriesContext";
 import { useState } from "react";
 

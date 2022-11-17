@@ -1,4 +1,4 @@
-import Countries from "./components/Countries"
+import Countries from "./pages/Countries"
 import Header from "./components/Header"
 import fetchAPI from "./otherFunctions/fetchAPI"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
