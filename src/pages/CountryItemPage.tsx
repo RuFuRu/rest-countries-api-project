@@ -9,7 +9,7 @@ function CountryItemPage({receivedData}: CountryItemProps) {
     return (
         <div className="country-item-page-container">
             <CountryItemPageNav />
-            <CountryItemPageDetails />
+            <CountryItemPageDetails receivedData={receivedData} />
         </div>
     )
 }
