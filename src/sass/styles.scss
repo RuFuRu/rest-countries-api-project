@@ -1,7 +1,7 @@
 @use 'default' as *;
 @use 'vars' as *;
 
-//header component
+//Header component
 header {
     display: flex;
     position: relative;
@@ -25,7 +25,7 @@ header {
     }
 }
 
-//countries component
+//Countries page and it's child components
 .countries {
     padding: 3.5rem 4rem;
     background-color: $light-mode-background;
@@ -84,6 +84,27 @@ header {
             .country-item-span {
                 font-weight: 600;
                 margin-right: 0.5rem;
+            }
+        }
+    }
+}
+
+
+//CountryItemPage page and it's child components
+.country-item-page-container {
+    padding: 3.5rem 4rem;
+    background-color: $light-mode-background;
+    .country-item-page-nav-container {
+        button {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 2rem;
+            border-radius: 10px;
+            border: none;
+            box-shadow: $btn-box-shadow;
+            cursor: pointer;
+            span {
+                margin-left: 0.5rem;
             }
         }
     }
