@@ -9,7 +9,7 @@ function App() {
   const [receivedData, setReceivedData] = useState<unknown>();
 
   useEffect(() => {
-    fetchData().then((data) => setReceivedData(data));
+    fetchData().then((data) => {setReceivedData(data); console.log(data)});
   },[])
 
   return (
