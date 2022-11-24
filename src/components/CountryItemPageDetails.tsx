@@ -25,9 +25,15 @@ function CountryItemPageDetails({receivedData}: CountryItemPageDetailsProps) {
             langValues.push(value as string)
         }
 
-        const neighbours = countryData.borders.map(neighbour => (
-            <span className={`cipd-neighbour`}>{neighbour}</span>
-        ))
+        
+        let neighbours;
+        if(typeof countryData.borders === "undefined") {
+            neighbours = "none"
+        } else {
+            neighbours = countryData.borders.map(neighbour => (
+                <span className={`cipd-neighbour`}>{neighbour}</span>
+            ))
+        }
 
         return (
             <div className="country-item-page-details" key={countryData.cca2}>
@@ -50,7 +56,7 @@ function CountryItemPageDetails({receivedData}: CountryItemPageDetailsProps) {
                     </div>
                 </div>
                 <div className="cipd-neighbours">
-                    <p><b>Border Countries:</b>{neighbours}</p>
+                    <p><b>Border Countries:</b>{neighbours ?? "none"}</p>
                 </div>
             </div>
         )
