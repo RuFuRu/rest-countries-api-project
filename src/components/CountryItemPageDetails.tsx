@@ -36,7 +36,7 @@ function CountryItemPageDetails({receivedData}: CountryItemPageDetailsProps) {
         }
 
         return (
-            <div className="country-item-page-details" key={countryData.cca2}>
+            <div className="country-item-page-details-container" key={countryData.cca2}>
                 <div className="cipd-flag">
                     <img src={countryData.flags.svg} alt="flag" />
                 </div>
@@ -54,9 +54,9 @@ function CountryItemPageDetails({receivedData}: CountryItemPageDetailsProps) {
                         <p><b>Currencies:</b>{(Object.values(countryData.currencies)[0] as unknown as currency).name}</p>
                         <p><b>Languages:</b>{langValues.join(", ")}</p>
                     </div>
-                </div>
-                <div className="cipd-neighbours">
-                    <p><b>Border Countries:</b>{neighbours ?? "none"}</p>
+                    <div className="cipd-neighbours">
+                        <p><b>Border Countries:</b>{neighbours}</p>
+                    </div>
                 </div>
             </div>
         )
