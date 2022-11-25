@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {countryListAPIType} from "../types/reusableTypes"
 import numberFormatter from "../otherFunctions/numberFormatter"
 
@@ -26,12 +26,12 @@ function CountryItemPageDetails({receivedData}: CountryItemPageDetailsProps) {
         }
 
         
-        let neighbours;
+        let neighbours: string | JSX.Element[];
         if(typeof countryData.borders === "undefined") {
             neighbours = "none"
         } else {
             neighbours = countryData.borders.map(neighbour => (
-                <span className={`cipd-neighbour`}>{neighbour}</span>
+                <Link to={`/country-item/${neighbour}`}><span className={`cipd-neighbour`}>{neighbour}</span></Link>
             ))
         }
 
