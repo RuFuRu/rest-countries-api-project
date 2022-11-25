@@ -8,7 +8,7 @@ interface CountryItemProps {
 
 function CountryItem({countryData}: CountryItemProps) {
     return (
-        <Link to={`/country-item/${countryData.cca2}`}>
+        <Link to={`/country-item/${countryData.cca3}`}>
             <div className="country-item-container">
                 <div><img src={countryData.flags.svg} alt={`${countryData.cca2} flag`}/></div>
                 <div className="country-item-description">

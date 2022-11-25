@@ -18,7 +18,7 @@ function CountryItemPageDetails({receivedData}: CountryItemPageDetailsProps) {
     const data = receivedData as [];
     const param = useParams();
 
-    const list = data && data.filter((countryData: countryListAPIType) => countryData.cca2 === param.id).map((countryData: countryListAPIType) => {
+    const list = data && data.filter((countryData: countryListAPIType) => countryData.cca3 === param.id).map((countryData: countryListAPIType) => {
         
         const langValues: string[] = []
         for(const [key, value] of Object.entries(countryData.languages)) {
