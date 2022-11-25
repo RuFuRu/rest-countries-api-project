@@ -148,10 +148,14 @@ header {
                         margin-right: 1rem;
                     }
                     span {
+                        display: inline-block;
                         box-shadow: $btn-box-shadow;
                         margin-right: 1rem;
                         padding: 0.5rem 1rem;
                         cursor: pointer;
+                        &:hover {
+                            transform: scale(1.1);
+                        }
                     }
                 }
             }
