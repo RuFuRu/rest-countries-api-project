@@ -39,7 +39,7 @@ function App() {
         <Header switchThemes={switchThemes} theme={theme}/>
           <Routes>
             <Route path="/" element={<Countries receivedData={receivedData} theme={theme}/>}></Route>
-            <Route path="/country-item/:id" element={<CountryItemPage receivedData={receivedData}/>}></Route>
+            <Route path="/country-item/:id" element={<CountryItemPage receivedData={receivedData} theme={theme}/>}></Route>
           </Routes>
       </div>
     </BrowserRouter>

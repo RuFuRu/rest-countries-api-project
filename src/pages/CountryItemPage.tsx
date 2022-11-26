@@ -1,15 +1,19 @@
 import CountryItemPageNav from "../components/CountryItemPageNav";
 import CountryItemPageDetails from "../components/CountryItemPageDetails";
+import CountryItemPageContext from "../context/CountryItemPageContext";
 
 interface CountryItemProps {
-    receivedData: unknown
+    receivedData: unknown,
+    theme: string
 }
 
-function CountryItemPage({receivedData}: CountryItemProps) {
+function CountryItemPage({receivedData, theme}: CountryItemProps) {
     return (
         <div className="country-item-page-container">
-            <CountryItemPageNav />
-            <CountryItemPageDetails receivedData={receivedData} />
+            <CountryItemPageContext.Provider value={{}}>
+                <CountryItemPageNav />
+                <CountryItemPageDetails receivedData={receivedData} />
+            </CountryItemPageContext.Provider>
         </div>
     )
 }
