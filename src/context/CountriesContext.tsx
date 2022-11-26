@@ -6,7 +6,8 @@ interface CountriesContextInterface {
     unFilter?: boolean,
     setUnFilter?: React.Dispatch<React.SetStateAction<boolean>> ,
     searchTerm?: string,
-    setSearchTerm?: React.Dispatch<React.SetStateAction<string>>
+    setSearchTerm?: React.Dispatch<React.SetStateAction<string>>,
+    theme?: string
 }
 
 const CountriesContext = createContext<CountriesContextInterface>({});

@@ -1,9 +1,26 @@
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import { FormEvent, useContext } from 'react';
+import { FormEvent, useContext, useEffect, useRef } from 'react';
 import CountriesContext from '../context/CountriesContext';
 
 function NavAndSearch() {
     const context = useContext(CountriesContext);
+    const searchRef = useRef<HTMLInputElement>(null);
+    const selectRef = useRef<HTMLSelectElement>(null);
+
+    useEffect(() => {
+        if(context.theme === "dark") {
+            searchRef.current!.style.backgroundColor = "hsl(209, 23%, 22%)";
+            searchRef.current!.style.color = "hsl(0, 0%, 100%)";
+            searchRef.current!.style.boxShadow = "none";
+            selectRef.current!.style.backgroundColor = "hsl(209, 23%, 22%)";
+            selectRef.current!.style.color = "hsl(0, 0%, 100%)";
+            selectRef.current!.style.boxShadow = "none";
+        }
+        else if(context.theme === "light") {
+            searchRef.current!.removeAttribute("style");
+            selectRef.current!.removeAttribute("style");
+        }
+    },[context.theme, searchRef])
 
     function handleChange(e: FormEvent) {
         const target = e.target as HTMLOptionElement;
@@ -22,10 +39,10 @@ function NavAndSearch() {
                 <span className='search-outlined-icon-container'>
                     <SearchOutlinedIcon style={{color: "hsl(0, 0%, 52%)"}}/>
                 </span>
-                <input type="search" id="search" placeholder="Search for a country" onChange={(e) => context.setSearchTerm!(e.target.value)}/>
+                <input type="search" id="search" placeholder="Search for a country" onChange={(e) => context.setSearchTerm!(e.target.value)} ref={searchRef}/>
             </div>
             <div className="nav-and-search-select-container">
-                <select name="filter-by-region" id="filter-by-region" onChange={(e) => handleChange(e)}>
+                <select name="filter-by-region" id="filter-by-region" onChange={(e) => handleChange(e)} ref={selectRef}>
                     <option value="all">All</option>
                     <option value="Africa">Africa</option>
                     <option value="Americas">America</option>
