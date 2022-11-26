@@ -10,9 +10,10 @@ interface CountriesProps {
 function Countries({receivedData}: CountriesProps) {
     const [filter, setFilter] = useState<string>('');
     const [unFilter, setUnFilter] = useState<boolean>(true);
+    const [searchTerm, setSearchTerm] = useState<string>('');
 
     return (
-        <CountriesContext.Provider value={{filter, setFilter, unFilter, setUnFilter}}>
+        <CountriesContext.Provider value={{filter, setFilter, unFilter, setUnFilter, searchTerm, setSearchTerm}}>
             <div className="countries">
                 <NavAndSearch/>
                 <CountryList receivedData={receivedData}/>

@@ -22,7 +22,7 @@ function NavAndSearch() {
                 <span className='search-outlined-icon-container'>
                     <SearchOutlinedIcon style={{color: "hsl(0, 0%, 52%)"}}/>
                 </span>
-                <input type="search" id="search" placeholder="Search for a country"/>
+                <input type="search" id="search" placeholder="Search for a country" onChange={(e) => context.setSearchTerm!(e.target.value)}/>
             </div>
             <div className="nav-and-search-select-container">
                 <select name="filter-by-region" id="filter-by-region" onChange={(e) => handleChange(e)}>

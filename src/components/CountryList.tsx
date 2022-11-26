@@ -13,7 +13,16 @@ const CountryList = memo(({receivedData}: CountryListProps) => {
 
     return (
         <div className="country-list">
-            {data && data.filter((countryData: countryListAPIType) => countryData.region === context.filter || context.unFilter).map((countryData: countryListAPIType) => (
+            {data && data
+            .filter((countryData: countryListAPIType) => countryData.region === context.filter || context.unFilter)
+            .filter((countryData: countryListAPIType) => {
+                if(context.searchTerm === "") {
+                    return countryData;
+                } else if(countryData.name.common.toLowerCase().includes(context.searchTerm!.toLowerCase())) {
+                    return countryData;
+                }
+            })
+            .map((countryData: countryListAPIType) => (
                 <CountryItem countryData={countryData} key={countryData.cca2}/>
             ))}
         </div>
