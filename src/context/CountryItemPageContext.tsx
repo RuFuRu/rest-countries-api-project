@@ -1,6 +1,8 @@
 import { createContext } from "react";
 
-interface CountryItemPageContextInterface {}
+interface CountryItemPageContextInterface {
+    theme?: string
+}
 
 const CountryItemPageContext = createContext<CountryItemPageContextInterface>({});
 
