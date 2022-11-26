@@ -34,7 +34,7 @@ function App() {
   },[theme, appRef])
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/rest-countries-api-project">
       <div className="App" ref={appRef}>
         <Header switchThemes={switchThemes} theme={theme}/>
           <Routes>
