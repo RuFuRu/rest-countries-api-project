@@ -71,6 +71,7 @@ header {
     }
     .country-list {
         display: grid;
+        justify-content: center;
         grid-template-columns: repeat(auto-fit, 300px);
         gap: 50px;
         margin-top: 3rem;
