@@ -202,6 +202,34 @@ header {
     }
 }
 
+@media (max-width: 900px) {
+    .countries  {
+        .nav-and-search {
+            .nav-and-search-input-container {
+                #search {
+                    width: 300px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 580px) {
+    .countries  {
+        .nav-and-search {
+            .nav-and-search-input-container {
+                #search {
+                    width: 150px;
+                }
+            }
+        }
+    }
+
+    .countries {
+        padding: 3.5rem 2rem;
+    }
+}
+
 @media (max-width: 485px) {
     header {
         padding: 1.5rem 1rem !important;
@@ -212,6 +240,28 @@ header {
     .cipd-country-name {
         h2 {
             font-size: 1.7rem !important;
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .countries  {
+        .nav-and-search {
+            .nav-and-search-input-container {
+                #search {
+                    width: 95px;
+                }
+            }
+        }
+    }
+
+    .countries  {
+        .nav-and-search {
+            .nav-and-search-input-container {
+                .search-outlined-icon-container {
+                    left: 5%;
+                }
+            }
         }
     }
 }
