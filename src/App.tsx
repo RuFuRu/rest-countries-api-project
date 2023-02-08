@@ -20,7 +20,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetchData().then((data) => {setReceivedData(data); console.log(data)});
+    fetchData().then((data) => {setReceivedData(data)}).catch(() => alert("There was an error with fetching the country list, please reload the page"));
 
     if(theme === "dark") {
       appRef.current!.style.color = "hsl(0, 0%, 100%)";
