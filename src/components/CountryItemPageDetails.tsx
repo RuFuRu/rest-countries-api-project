@@ -19,6 +19,14 @@ function CountryItemPageDetails({receivedData}: CountryItemPageDetailsProps) {
     const param = useParams();
 
     const list = data && data.filter((countryData: countryListAPIType) => countryData.cca3 === param.id).map((countryData: countryListAPIType) => {
+        if(countryData.cca3 === "BVT" || countryData.cca3 === "HMD") {
+            return (
+                <>
+                    <div>These Countries don't have any real data to be displayed</div>
+                </>
+            )
+        }
+
         
         const langValues: string[] = []
         for(const [key, value] of Object.entries(countryData.languages)) {
