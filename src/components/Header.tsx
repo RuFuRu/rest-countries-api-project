@@ -28,6 +28,7 @@ function Header({switchThemes, theme}: HeaderProps) {
     useEffect(() => {
         if(theme === "dark") {
             headerRef.current!.style.backgroundColor = "hsl(207, 26%, 17%)";
+            document.documentElement.style.backgroundColor = "hsl(207, 26%, 17%)";
             h3Ref.current!.style.color = "hsl(0, 0%, 100%)";
             spanRef.current!.style.color = "hsl(0, 0%, 100%)";
             setIconColour('secondary');
@@ -36,6 +37,7 @@ function Header({switchThemes, theme}: HeaderProps) {
             headerRef.current!.removeAttribute("style");
             h3Ref.current!.removeAttribute("style");
             spanRef.current!.removeAttribute("style");
+            document.documentElement.removeAttribute("style");
             setIconColour('primary');
         }
     },[theme, headerRef, h3Ref, spanRef])
